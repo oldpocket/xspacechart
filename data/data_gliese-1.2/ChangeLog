@@ -1,0 +1,23 @@
+2001-04-26  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* gliese2spacechart.pl: Added ra/dec to output.
+	
+	* gliese2spacechart.pl (parse_record): Fixed bug in the reading of
+	declination minutes: the first figure was being ignored.
+
+2001-04-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* star_names: Added star names by gliese number provided by
+	Keith Smeltz <kdsmeltz@apk.net>.
+
+2000-12-20  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* gliese2spacechart.pl (find_names): Changed to have every star use
+	it's DM number as short name if there isn't another.
+	(find_names): Corrected again, so that the short name is still the
+	abbreviated version of the Bayer name, if possible.
+
+2000-12-11  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Created ChangeLog for data_gliese module.
+

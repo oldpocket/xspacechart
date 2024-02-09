@@ -1,0 +1,22 @@
+# List of source files containing translatable strings.
+src/common.c
+src/config_dialog.c
+src/gui.c
+src/link.c
+src/link_config.c
+src/link_draw_rules.c
+src/link_index.c
+src/link_selection.c
+src/main.c
+src/map.c
+src/map_widget.c
+src/perspective.c
+src/settings.c
+src/star.c
+src/star_catalog.c
+src/star_config.c
+src/star_draw_rules.c
+src/star_index.c
+src/star_info_dialog.c
+src/star_selection.c
+src/star_selection_dialog.c

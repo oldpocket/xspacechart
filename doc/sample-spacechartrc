@@ -1,0 +1,176 @@
+#### ~/.spacechartrc                            -*-shell-script-*-
+#### Robert J. Chassell, bob@gnu.org
+#### 2001 Dec 16
+
+# This is a sample, individual ~/.spacechartrc file.  It is designed
+# to work with a system-wide /usr/local/src/spacechart/spacechartrc
+# file. `spacechart' loads this file after the system-wide file.
+
+# Please note that the spacechart program separates the selection of
+# what is shown from the way in which it is drawn.
+# Consequently, for example, link_rules must always possess a default
+# to handle all links not otherwise covered.
+# In short, you must specify how to draw everything, and then
+# select a portion to display.
+
+################
+
+# As of 2001 Dec 16, this RC file is set to show G and K stars in
+# single systems only.  It does not show any multiple star systems.
+
+# Only stars with a maximum luminosity of less than 10 times Sol are shown.
+# This excludes red giants.
+
+# Links are set to 6, 9, 12, 15, and 18 light years.
+# The maximum link is 18 light years.
+
+# Also, this RC file is set to a view_radius of 40 ly, since this size
+# shows the group of close stars between Beta Canum Venaticorum and
+# Lambda Serpentis, including beta Coma Berenices and Eta Bootis.
+# Otherwise, 30 ly is a good choice of radius.
+
+################
+
+#### Select default source of data.
+catalog = "/usr/local/share/spacechart/gliese.dat"
+
+#### Select default distance unit.
+# Possible values are pc (parsecs) and ly (light years)
+distance_unit = ly
+
+#### Select default radius of the visible sphere,
+# in either pc (parsec) or ly (light year)
+# Format:  view_radius = distance distance_unit
+# A view_radius of 40 ly is OK if you display only single G and K stars
+# Your diplay may be cluttered if you show more stars; in that case,
+# choose a smaller view_radius, such as 20 ly or 30 ly
+view_radius = 40 ly
+
+#### Select default center for coordinates.
+# user_coords use degrees of latitude and longitude,
+# expressed in that order.  They are based on Equatorial Coordinates.
+# Longitude increases counter-clockwise with respect to Sol.
+# Format:  user_coords = (latitude, longitude)
+user_coords = (0,0)
+
+
+# star_rules      specifies how stars are shown
+# star_selection  specifies which stars are shown
+
+#### Select default rules that specify how stars are drawn.
+# First, the color to use for each spectral type.
+# Order matters!! 'W' means any white dwarf.
+# (The following expression must appear to the program
+# as if it is on one single line; either escape
+# carriage returns with a backslash or comment out the line.)
+star_rules = ( ( O : (R: 1.0 ; G: 1.0 ; B: 1.0 );      \
+	         B : (R: 1.0 ; G: 1.0 ; B: 1.0 );      \
+                 A : (R: 0.9 ; G: 1.0 ; B: 1.0 );      \
+                 F : (R: 1.0 ; G :1.0 ; B: 0.75 );     \
+                 G : (R: 1.0 ; G: 1.0 ; B: 0.0 );      \
+                 K : (R: 1.0 ; G: 0.5 ; B: 0.0 );      \
+                 M : (R: 1.0 ; G: 0.0 ; B: 0.0 );      \
+                 W : (R: 0.75 ; G: 0.75 ; B: 0.75 ) ), \
+    # The following determines the size of the drawing of the star,
+    # based on the star's luminosity.
+    # Specify the luminosity values where the size star will change.
+    # Here, the breaks are: 0.1 and 0.4 that of Sol, 2 and 4 times Sol
+               ( 0.1 ; 0.4 ; 2.0 ; 4.0 ),              \
+    # The following  which stars will have a label attached
+    # (for stars that are displayed).
+    # The following line selects all stars with a luminosity
+    # between 0.001 and 1000 times Sol, and all types of star.
+               ( 0.001; 1000 ; [OBAFGKMW]; true ) )
+
+#### Select which stars are shown by default
+#  Format is:
+#    star_selection = ( min_lum; max_lum; set_of_classes; show_multiples )
+#     min_lum the minimum luminosity you want, empty to indicate no limit.
+#     max_lum the maximum luminosity you want, empty to indicate no limit.
+#     set_of_classes is a square bracket enclosed list of spectral classes
+#       you want to be shown. Empty means no stars are shown.
+#     show_multiples is either true or false.
+#
+# The following shows stars that are less then 10 times the
+# luminosity of our sun.  This prevents red giants from being shown.
+# Also, only G and K stars will be shown.
+# In addition, only stellar systems with one star are shown.
+# No multi-star systems such as Alpha Centuri will be shown.
+star_selection = (;10;[GK];false)
+
+#### Select the default maximum length of a link to be shown on the map
+# in pc (parsec) or ly (light year)
+# Note that all link_rules must have a default for showing longer links
+# but only links that are shorter than this length will be shown.
+# Format:  max_link = distance distance_unit
+max_link = 18 ly
+
+#### Select how to show links, regardless of length
+# Note that link rule must have a default or `other'
+# rule that specifies how  all longer links are shown,
+# if they are selected.
+# (By default in this ~/.spacechartrc file, this default or
+# `other' rule is not used; but during operation, you may change
+# the value of max_link.)
+
+# A link_rules expression must be a single line;
+# if you want to see it on several lines, as below,
+# escape each carriage return with a backslash.
+# (You do not need to escape lines that are commented out;
+# but are commented out here because they look better.)
+
+# The following shows links of 6, 9, 12, 15, and 18 ly
+link_rules =  (                                                     \
+    # Red  1.00 0.00 0.00                                           \
+    ( 6 ly ; (R:1.00; G:0.0; B:0.0) ; solid ; 0 ),                  \
+    #                                                               \
+    # Yellow  0.96 1.00 0.00                                        \
+    ( 9 ly ; (R:0.96; G:1.0; B:0.0) ; solid ; 0 ),                  \
+    #                                                               \
+    # Green                                                         \
+    ( 12 ly ; (R:0.0; G:1.0; B:0.0) ; solid ; 0 ),                  \
+    #                                                               \
+    # Blue solid                                                    \
+    ( 15 ly ; (R:0.0; G:0.36; B:0.60) ; solid ; 0 ),                \
+    #                                                               \
+    # Blue dashed                                                   \
+    ( 18 ly ; (R:0.0; G:0.36; B:0.60) ; dashed ; 0 ),               \
+    #                                                               \
+    # Default rule for longer links; may be over ridden by max_link \
+    ((R:0.0; G:0.36; B:0.60) ; dashed ; 0 ))
+
+
+#### Examples of  alternative link rules
+
+# # The following shows links of 7, 11.5, and 15 ly
+# max_link = 15 ly
+# link_rules =  (                                                     \
+#     # Red  1.00 0.00 0.00                                           \
+#     ( 7 ly ; (R:1.00; G:0.0; B:0.0) ; solid ; 0 ),                  \
+#     #                                                               \
+#     # Yellow  0.96 1.00 0.00                                        \
+#     ( 11.5 ly ; (R:0.96; G:1.0; B:0.0) ; solid ; 0 ),               \
+#     #                                                               \
+#     # Blue dashed                                                   \
+#     ( 15 ly ; (R:0.0; G:0.36; B:0.60) ; dashed ; 0 ),               \
+#     #                                                               \
+#     # Default rule for longer links; may be over ridden by max_link \
+#     ((R:0.0; G:0.36; B:0.60) ; dashed ; 0 ))
+#
+#
+# # The following shows links of 14 and 17 ly only
+# max_link = 17 ly
+# link_rules =  (                                                     \
+#     # Yellow  0.96 1.00 0.00                                        \
+#     ( 14 ly ; (R:0.96; G:1.0; B:0.0) ; solid ; 0 )  ,               \
+#     #                                                               \
+#     # Blue dashed                                                   \
+#     ( 17 ly ; (R:0.0; G:0.36; B:0.60) ; dashed ; 0 ),               \
+#     #                                                               \
+#     # Default rule for longer links; may be over ridden by max_link \
+#     ((R:0.0; G:0.36; B:0.60) ; dashed ; 0 ))
+#
+# #### end example alternative link rules
+
+################ end ~/.spacechartrc ################
+

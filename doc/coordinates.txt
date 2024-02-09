@@ -1,0 +1,74 @@
+                     Looking at Stars in 3D
+		     by Robert J. Chassell
+       
+Spacechart displays a window onto what amounts to a globe or sphere
+which contains stars and whose radius is the view_radius.
+
+The stars within the sphere are located according to their right
+ascension, declination, and distance from Sol.
+
+You can rotate the globe using various keys.
+
+(NOTE: (by Miguel Coca) Another way to look at this is thinking of
+yourself moving around the sphere, while the stars remain static)
+
+Your point of view as an observer is from the surface of an imaginary
+globe that is larger than the one in the display.  Your coordinate
+position is as if you were sitting on this surface, looking at Sol (or
+looking at whatever is the center of the display-- for this
+discussion, we are assuming the center is Sol).
+
+Points on the surface of the globe are located by their Right
+Ascension and Declination as measured from the point of view of Sol.
+
+Note, however, that spacechart converts the hours, minutes, and
+seconds of Right Ascension to degrees of arc, and refers to this
+measure as longitude.
+
+Thus, when the star Sirius is in front of Sol, it is as if I am
+looking up at the globe from an Declination of -16 deg and a Right
+Ascension of 6 hours 43 minutes (or approximately, 101 degrees) (which is
+the Right Ascension and Declination of Sirius).
+
+In the spacechart display, user coordinates are shown in a box in the
+lower left.
+
+The user coordinates show you two different pieces of information:
+
+  * The Longitude and Latitude coordinates are the value of Right
+    Ascension and Declination of your point of view, looking inwards,
+    measured in degrees.  That is to say, if a line were drawn from
+    Sol to your eye, the line would have the Longitude and Latitude
+    coordinates shown.
+
+  * The direction of North is the degree to which the North pole is
+    tipped from being on top, the tipping being along a line 90
+    degrees from where you are looking -- along the `edge' of the
+    globe, as it were.  The measure tells you how much the globe of
+    stars at which you are looking is tipped on its side.
+
+Put another way, the direction from which you are looking -- the
+position on the globe which you are sitting, looking inward -- is
+stated by the Longitude and Latitude user_coords.
+
+When the direction of North is zero, the North Pole of the globe is at
+the top of the screen.  When you increase the value of the north
+coordinate, the globe you are looking at tips on its side.  It always
+tips so that the North Pole moves along a line that is 90 degrees from
+the longitude on which you are sitting, looking inwards.  
+
+Thus, if you increase the value of the the north coordinate from zero
+to 60 degrees, the glove tips on its side 60 degrees, so that the
+North Pole is now at what used to be a latitude (or declination) of 30
+degrees.
+
+If you then rotate the display left or right, the Longitude and
+Latitude user_coords will change
+
+If you increase the value of the the north coordinate to 90 degrees,
+the globe is, as it were, lying on its side.
+
+In this case, when you rotate the display left or right, the Latitude
+changes, but not the Longitude.  This is because the globe is lying on
+its side and your point of view is moving left or right, which means
+along a line of the same longitude, changing only its latitude.

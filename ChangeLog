@@ -1,0 +1,672 @@
+2002-11-24  Miguel Coca  <mcoca@gnu.org>
+
+	* spacechartrc: Changed default catalogue.
+
+	* src/main.c, AUTHORS: Change my email address.
+	
+2002-10-28  Miguel Coca  <e970095@zipi.fi.upm.es>	
+	
+	* src/gui.c (MAX_RADIUS): Increase the maximum radius of the map, to
+	cope with the inminent change to Hipparcos data.
+
+2002-09-27  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* configure.in: Added french translation. Thanks to Guillaume Allègre
+	<Guillaume.Allegre@imag.fr>
+
+2002-07-05  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star.c (star_new)
+	(star_destroy)
+	(star_component_new) 
+	(star_component_destroy): Use glib memory management functions. By
+	using g_malloc0 we fix the problem with garbage characters at the
+	end of strings.
+
+	* src/star_list_dialog.c (star_list_dialog_new): Added callbacks
+	to detect when a star is selected and to center it when the
+	"center" button is clicked.
+
+2002-07-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (create_user_coords): Extended separator to cover the
+	whole frame.
+
+2002-06-22  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/star_catalog.h: New function.
+
+	* src/star_catalog.c (star_catalog_foreach): New function.
+
+	* src/gui.c: Cleaned includes.
+	(struct st_gui): Added the star_list_dialog.
+	(cb_settings_changed_catalog_filename): Load the catalog into the list 
+	dialog.
+	(gui_new): Create the star list dialog.
+
+	* src/gui.c (create_user_coords): Changed "Lat" (latitude) to
+	"Dec" (declination) to go along with the use of right ascension.
+
+2002-06-21  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (load_catalog, cb_load_progress): Display the info about
+	the data file as it is being loaded.
+
+2002-06-09  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star_selection_dialog.c (selection_dialog_show): Changed to 
+	always raise the dialog.
+
+2002-06-08  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (create_menus): Moved function.
+	(create_user_coords): Renamed function.
+	(create_toolbar): Moved toolbar creation code to this new function.
+	(create_main_area): Moved code here.
+
+2002-06-07  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* spacechartrc (user_coords): Again, change to RA.
+
+	* src/settings.c (save_coords): Now we save Right Ascension by 
+	default (actually, the only way to save longitude is hand editing the
+	~/.spacechartrc).
+
+	* src/rcparser_y.y (user_coords): Changed to allow both longitude and
+	right ascension.
+
+	* src/gui.c (struct st_gui): Added fields for moving from Longitude to
+	Right Ascension.
+	(cb_settings_changed_sight_params): Changed to use RA.
+	(cb_changed_user_coords): Likewise.
+
+	* src/common.c (ra_to_lon): Added function.
+	(lon_to_ra): Added.
+
+	* include/starmap.h: Added RA to Lon transformation functions.
+
+	* src/gui.c (user_coords): Moved code to this new function.
+	(gui_new): Changed to call user_coords.
+
+2002-06-06  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/Makefile.am (INCLUDES): Added trailing '/' to directory names.
+
+	* src/gui.c (gui_new): Removed the name of the default data file. It
+	shouldn't be hardcoded, we already have config files for that.
+	(cb_open_ok_clicked): Added some sanity checks to the file selected.
+
+2002-06-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* po/es.po: Updated Spanish translation.
+
+	* src/map.c (cb_sight_params): Fixed to account for the displacement
+	of the observer when the map is not centered on (0,0,0).
+
+	* src/settings.c (print_star_selection): Now it prints luminosity
+	limits too.
+
+2002-06-03  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_l.l: Added locale.h to the includes. Still wondering
+	how it could compile before.
+
+	* src/gui.c (create_menus): Finally got keybinding reloading working.
+
+	* src/settings.c (settings_set_catalog_filename): Fixed to emit 
+	callbacks even if the new catalog is NULL.
+	(settings_set_catalog_filename): Fixed to NOT emit callbacks if the
+	catalog has not changed.
+
+	* src/gui.c (create_menus): Fixes bug #384, '"About data file" 
+	insensitive'.
+	(create_menus): Temporarily disabled some code when reloading. It 
+	wasn't really doing anything.
+	(cb_close_clicked, cb_settings_changed_catalog_filename): Changed the
+	place where the old catalogue is removed.
+
+	* src/Makefile.am: Cosmetic changes.
+
+	* configure.in: Cleaned code.
+
+	* autogen.sh: Changed program name.
+
+	* macros/: Updated to latest version.
+
+	* src/gui.c: Changed program name to "GNU Spacechart", fixed copyright 
+	notices.
+
+	* src/main.c: likewise.
+
+	* src/star_selection.c: Changed to use "string.h" instead of 
+	"strings.h".
+
+2002-04-24  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (cb_save_clicked): Added user confirmation.
+
+	* src/settings.c (save_keybindings): Completed.
+
+	* include/keys.h: Added file.
+
+	* src/keys.c: Added file.
+
+	* src/rcparser_l.l: Fixed regular expression for numbers.
+	Changed to use more flexible keybinding support.
+
+2002-04-09  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/settings.c (settings_save_settings): Finished saving files. No
+	keybindings yet, though.
+
+2002-02-22  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c: Added "Save" menu item.
+
+2002-02-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_l.l (rcparser_close_lex): Added function.
+	* src/rcparser_y.y (rcparser_parse_file): Fixed to close the input
+	file. 
+	
+2002-01-21  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* configure.in: Added bulgarian translation. Thanks to Alexander
+	Shopov <al_shopov@web.bg>.
+
+2001-12-24  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released 0.9.4
+
+	* po/es.po: Updated for 0.9.4
+
+2001-12-22  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (cb_about_clicked): Added reference to documentation.
+
+2001-12-16  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/starmap.h: Added keybinding for reload settings.
+
+	* src/rcparser_l.l: Added keybinding for reload settings.
+
+	* src/gui.c (create_menus): Added keybinding for reload settings.
+
+	* src/rcparser_y.y: Allow the default link rule to appear anywhere in
+	the list.
+
+2001-12-15  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_y.y: Changed syntax of link rules.
+
+	* src/rcparser_l.l: Changed syntax of link rules.
+
+	* src/map.c (cb_view_radius): Fixed bug when map was not centered.
+
+2001-12-14  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/settings.c (settings_set_catalog_filename): Fixed for empty
+	filename. 
+	Added functions to read config files. Added keybindings as a setting.
+	(settings_new): Added initialization to changed_properties. Fixes bug.
+
+	* src/main.c: Removed functions to read config files, which are now
+	part of settings.c.
+
+	* src/gui.c: Added "Reload settings" and assorted changes to make it
+	work. This includes moving the creation of the menubar out of gui_new.
+	Changed order of lat/long and separated them from north.
+
+	* src/rcparser_y.y (rcparser_apply_to_settings): Set keybindings
+	directly in settings.
+
+	* src/perspective.c (perspective_move_center): Fixed bug when distance
+	was 0.
+
+2001-12-13  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_y.y: Changed order of lat/long in user_coords.
+
+	* src/rcparser_l.l: Comments may begin anywhere in a line
+
+2001-12-12  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_l.l: Changed case of keywords true/false.
+
+	* src/main.c: Changed to make RC file parsing errors abort the program.
+
+	* src/rcparser_y.y (rcparser_parse_file): Reset yylineno each time a
+	new file is parsed.
+	(yyerror): Added filename to error message.
+
+2001-12-11  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_y.y: Added field to selections to choose wether to
+	show multiples.
+
+	* src/main.c (read_config_files): Changed to use just one config file.
+
+	* src/rcparser_y.y (rcparser_apply_to_settings): Don't save the
+	filename if there isn't one.
+
+	* include/gui.h (gui_new): Changed declaration to remove unneeded
+	parameter.
+
+	* src/map.c: Changes to remove initialization from map_new and take
+	it to the callbacks.
+
+	* src/gui.c: General changes to make initialization occur by callbacks
+	from the settings, instead of by the gui_new() function.
+
+	* include/settings.h: Added catalog_filename option.
+
+	* src/settings.c: Added catalog_filename option.
+
+	* src/main.c (main): Changes to make settings callbacks occur after 
+	all initialization is done.
+
+	* src/rcparser_l.l: Added "catalog" token.
+
+	* src/rcparser_y.y (rcparser_apply_to_settings): User coordinates are
+	now passed to the settings as radians.
+	(catalog): Added "catalog" option.
+
+2001-12-10  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star_selection_dialog.c: Made the spin buttons disable when
+	their value is not being used. 
+
+	* src/main.c (read_config_files): Fixed error message when
+	~/.spacechart is not a directory.
+
+2001-12-09  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/map.c (cb_clicked_on_map): Fixed bug that caused a crash when 
+	the map was clicked without any catalog loaded.
+
+2001-12-05  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/main.c (read_config_files): Changed sys_errlist[errno] to
+	strerror(errno), to allow compilation on Solaris 8. Patch by
+	Dave@Lopata.Net.
+
+2001-12-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.9.3
+
+2001-11-30  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/common.c (cartesian_to_polar):
+	* src/settings.c (settings_get_sight_params_polar): Added stupid
+	checks to account for rounding errors in floating point.
+
+2001-11-20  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* spacechartrc: Changed default keybindings.
+
+	* src/rcparser_l.l: Fixed bug which made mods stick from a key to the
+	next.
+
+2001-11-19  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* spacechartrc: Added default keybindings.
+
+2001-09-16  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/main.c (read_config_files): Changed to read all files in 
+	"~/.spacechart/".
+
+2001-09-10  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/main.c (read_config_files): Added function.
+
+	* src/rcparser_l.l: Added keynames. Only those supported by gtk as
+	accels.
+
+2001-09-05  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/main.c (main): Read keybindings from parser.
+
+	* src/rcparser_l.l: Added keybindings.
+
+	* src/rcparser_y.y: Added keybindings.
+
+2001-08-29  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Makefile.am: Added installation of config file.
+
+	* src/main.c (main): Added logic to chose config file.
+
+2001-08-13  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (gui_new): Fixed bug in the inicialization of the distance
+	unit used.
+
+2001-07-26  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_l.l: Fixed bug when non-english locale was selected.
+
+	* src/gui.c (cb_about_data_file_clicked): Added "About data file"
+	dialog.
+
+2001-06-21  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/rcparser_y.y: Finished with parser. Very buggy but works.
+
+2001-06-15  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/star_draw_rules.h: Pasted SIZE_* constants here.
+
+	* src/star_config.c: Moved SIZE_* constants to header file for parser.
+
+2001-06-11  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star_catalog.c (star_catalog_read): The header is correctly read
+	now.
+
+2001-06-08  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star_catalog.c (star_catalog_read): Added support for reading
+	the header.
+
+	* src/rcparser_y.y: Parses, doesn't do much yet but at least parses.
+
+	* src/rcparser_l.l: Works.
+
+2001-04-28  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/star_catalog.h: Added info function to interface.
+
+2001-04-26  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* spacechartrc: Added default rc file for testing.
+
+	* include/starmap.h: Fixed description of emit_error_message().
+
+	* Datafiles from previous versions are no longer compatible.
+	
+	* src/star.c (star_read): Added support for reading ra/dec.
+
+	* src/star_info_dialog.c (write_star): Added ra/dec display and cleaned
+	display of distance.
+
+2001-04-25  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star.c: Added ra/dec functions.
+
+	* include/star.h: Added ra/dec functions.
+
+	* src/map_widget.c (map_widget_new): Removed the default size of the
+	map which was giving problems with small screens.
+
+2000-12-28  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (gui_new): Finally got keybindings working properly.
+
+2000-12-27  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/gui.h: Changed interface. 'new' has arguments, and added
+	'get' functions.
+
+	* src/gui.c (cb_rotate_clicked): Added rotation commands to the menu.
+
+	* src/common.c (cartesian_to_polar): Fixed lots of bugs. It only worked
+	for unitary vectors, and gave wrong longitude.
+
+	* src/star_info_dialog.c (star_info_get_dialog): Implemented.
+
+	* include/star_info_dialog.h: Added get_dialog function.
+
+	* src/link_config.c (cb_select_row): Disabled 'delete' for the default
+	rule. Fixes bug where deleting the rule caused a crash.
+
+2000-12-24  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/map.c (map_rotate): Function written.
+
+	* include/map.h: Added rotate function.
+
+2000-12-22  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c (cb_about_clicked): Fixed bug that caused the 'about'
+	dialog to fail if called more than once.
+
+2000-12-21  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.9.2
+	
+	* src/settings.c (settings_set_sight_params_polar): Now works 
+	completely.
+	(settings_get_sight_params_polar): Same as above.
+
+2000-12-19  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/star_catalog.c (star_catalog_read): Check the report_progress
+	function for abort condition.
+
+	* include/star_catalog.h: Added support for aborting the load of the 
+	catalog.
+
+	* src/gui.c (load_catalog): Added dialog that allows the user to abort
+	the load.
+
+	* src/map.c (cb_sight_params): Implemented function.
+
+	* src/settings.c (settings_set_sight_params_polar): Added function.
+	(settings_get_sight_params_polar): Idem.
+
+	* src/gui.c: Added user coordinates frame.
+
+	* include/settings.h: Added functions to access the sight params in
+	polar format.
+
+	* data/gliese.dat: Updated to new version. Now most stars have a name.
+	
+2000-12-18  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/common.c (cartesian_to_polar): Added function.
+	(polar_to_cartesian): Idem.
+
+	* include/starmap.h: Added coordinate transformation functions.
+
+	* src/gui.c: Added the 'View' menu.
+
+	* src/star_info_dialog.c (star_info_set_star): Added star name to
+	dialog title.
+
+	* src/star_config.c (star_config_new): Cleaned UI.
+
+2000-12-17  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/map.c (cb_is_clicked_star): Increased sensitive circle.
+
+	* src/star_info_dialog.c (star_info_new): Changed the order of buttons
+	for consistency.
+
+	* src/star_config.c: Added selection of which star names are shown.
+
+2000-12-05  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.9.1
+
+2000-12-04  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* TODO: Added file.
+
+	* src/link_config.c: Fixed bug that made impossible to edit the default
+	rule.
+
+2000-12-01  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/*.h: Removed all #include <gnome.h>
+	
+	* src/*.c: Removed all #include <gnome.h>
+	
+	* include/starmap.h: Added #include <gnome.h>
+
+	* po/: Added Spanish.
+
+	* src/main.c (main): Added call to initialize gettext.
+
+2000-11-30  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* README: Edited for first version with real content.
+
+	* Released version 0.9
+	
+	* src/link_config.c (cb_insert_rule): Added distance unit support.
+	(create_rule_dialog): Idem.
+	(cb_apply_add): Idem.
+	(cb_apply_edit): Idem.
+
+	* src/config_dialog.c (config_dialog_new): Added call to 
+	link_config_set_unit().
+
+	* src/link_config.c: Added functionality to the 'add' button.
+	(cb_delete_rule): Idem for 'delete'.
+	(link_config_new): Made the 'edit' and 'delete' buttons work only if
+	a rule is selected.
+
+2000-11-29  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/link_config.c: Almost works now. Editing rules works.
+
+	* src/config_dialog.c (cb_apply): Added support fo link_config.
+
+2000-11-28  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/settings.c (set_default_settings): Changed default for links.
+
+	* src/star_config.c: Changed default size of stars.
+
+	* include/star_draw_rules.h: Changed default size of stars.
+
+	* src/settings.c (set_default_settings): Changed default size of stars.
+
+	* include/link_draw_rules.h: Added get_default function.
+
+	* src/link_draw_rules.c (link_drawing_rules_get_default): Added function.
+
+2000-11-27  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.8.4
+
+	* src/config_dialog.c (config_dialog_new): Added a frame to the labels
+	page.
+
+2000-11-24  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/config_dialog.c: Made buttons smaller.
+
+	* src/star_config.c (star_config_new): Cleaned display a bit.
+
+	* src/link_config.c: Added file.
+
+	* src/config_dialog.c: Added link_config support.
+
+2000-11-23  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* include/link_config.h: Same as for star_config.h, added callback.
+
+	* src/star_config.c: Added support for the new callback.
+
+	* include/star_config.h: Added callback function to tell the parent
+	that the config has changed.
+
+2000-11-22  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/config_dialog.c (config_dialog_new): Added star_config support.
+	(config_dialog_destroy): Added star_config_destroy.
+	(cb_apply): Now we also set the star rules.
+
+	* src/star_config.c: Added file.
+
+2000-11-21  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.8.3.
+	
+	* src/star_info_dialog.c (star_info_set_distance_units): Fixed bug that
+	was making the dialog pop each time the distance unit was changed.
+	(write_star): New function to help with the bug metioned above.
+	(star_info_set_star): Changed to use write_star.
+
+	* src/gui.c (gui_new): Added 'close' menu item.
+	(gui_new): Added 'open' and 'close' toolbar items.
+
+	* src/map.c (build_indexes): Set the indexes to NULL after destroying
+	then, so that we never try to use the old pointers again.
+
+	* src/star_catalog.c (star_list_destroy): Fixed to destroy the stars.
+
+	* src/gui.c (gui_new): Added file selection dialog.
+	(cb_open_clicked) Uses file selection dialog.
+
+	* src/settings.c: Changed to allow nested disable_callbacks() ...
+	enable_callbacks() pais.
+
+	* src/map.c (build_indexes): Changed so that we don't try to build an
+	index if the corresponding list does not exist.
+
+	* src/gui.c (load_catalog): Added progress bar code.
+	(gui_new): Added 'open' button. Just loads the default database.
+
+	* src/star_catalog.c (star_catalog_read): Added report_progress 
+	argument to the function.
+
+	* include/star_catalog.h: Added report_progress argument to the read
+	function.
+
+	* src/gui.c (load_catalog): New function that loads a catalog from a
+	file and reports possible errors.
+	(gui_new): Changed to call said function.
+	(gui_new): Added progressbar to the appbar.
+
+2000-11-20  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/config_dialog.c (cb_apply): We were aplying once for each page,
+	instead of just once, in a 'global apply'. Fixed.
+	(config_dialog_new): Added callback to "close" signal, in order to
+	destroy the realted data structures.
+	(cb_delete_event): New function (callback for the above).
+
+	* src/settings.c (set_default_settings): Changed to not show link 
+	labels by default.
+
+	* src/gui.c (gui_new): Connected "delete_event" signal of the GnomeApp,
+	so that the program exits when the window is deleted.
+
+	* src/map.c (draw_link): Changed precision of the labels to just one
+	decimal place.
+
+2000-11-19  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* Released version 0.8.2.
+	
+	* src/gui.c: Changed to use new config_dialog interface.
+
+	* include/config_dialog.h: Changed interface to allow easier 
+	implementation with gnome_property_box. Now there is no show function.
+
+	* src/config_dialog.c: Wrote first working version. Now we can change
+	the label settings.
+
+	* src/settings.c (handle_callbacks): Moved the clearing of the changed
+	settings inside the if(cb_enabled). Stupid bug.
+
+	* src/config_dialog.c: Created dummy version.
+
+	* src/gui.c (gui_new): Added support for the config dialog.
+
+2000-11-18  Miguel Coca  <e970095@zipi.fi.upm.es>
+
+	* src/gui.c: Added the distance unit selection frame.
+
+	* src/settings.c (handle_callbacks): Fixed the function to avoid a 
+	potentially infinite recursion. See comment to the function for 
+	details.
+
+	* Renamed the project as 'spacechart', designed arbitrary version num-
+	ber as 0.8 and deleted old ChangeLog.
+
+	$Id: ChangeLog,v 1.1 2017/09/23 00:04:07 strauss Exp $
+	Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc.

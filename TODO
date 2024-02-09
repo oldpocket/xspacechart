@@ -1,0 +1,35 @@
+* For version 1.0
+
+	* Add a button to the star settings page to select which stars
+	have a label attached. [DONE]
+
+	* Add menu items for all toobar actions. [DONE]
+
+	* Show a dialog while loading the catalogue, and allow the user to 
+	cancel the load. [DONE]
+
+	* Show Right Ascension and Declination for every star. [DONE]
+
+	* Add keybindings for most actions. [DONE]
+
+	* Write and read settings from files. [DONE]
+
+	* A list of stars in the current catalogue. [DONE]
+
+	* Graphic display of the user coordinates.
+
+	* Command line arguments (which ones?).
+
+* For future versions
+
+	* Add a grid to the floor of the map, with legs to each star, so that
+	you can see how far a star is.
+
+	* Reimplement map_widget with a gdk_rgb.
+
+	* Better selection of stars: at least, allow the user to define a set
+	of stars.
+
+	* Custom rules for the drawing of stars.
+
+	* Many more.

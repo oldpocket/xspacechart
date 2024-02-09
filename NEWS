@@ -1,0 +1,83 @@
+Changes in version 2.0.0
+------------------------
+	
+	* Removed autoconf tool and files
+	
+	* Refactory to XForms, replacing GTK1.x
+
+Changes in version 0.9.5
+------------------------
+
+	* SpaceChart is now part of the GNU Project.
+
+	* Added bulgarian translation.
+
+	* Added french translation.
+
+	* Added saving configuration files.
+
+	* SpaceChart now uses Right Ascension instead of longitude when
+	interacting with users.
+
+	* You can now see a list of all stars in the current dialog, and
+	center the map on any of them.
+
+	* The default data file now comes from Hipparcos/CCDM. Read 
+	data/README to find out more.
+
+Changes in version 0.9.4
+------------------------
+
+	* IMPORTANT: Syntax of the config file has changed. Please replace
+	your system-wide spacechartrc (/usr/local/etc/spacechartrc in most
+	cases) with the provided spacechartrc file.
+
+	* Now a single ~/.spacechartrc is read as configuration file.
+
+	* Plenty of bugfixes to config files.
+
+	* Added button to reset the map to the default settings.
+
+	* Fixed even more bugs.
+
+Changes in version 0.9.3
+------------------------
+
+	* Config files. On startup all files in the ~.spacechart/ directory
+	are read as configuration files.
+
+	* Customizable keybindings. Now most actions available through menu
+	and/or mouse can have an associated keyboard key.
+
+	* Reduced default window size to avoid problems with low resolution
+	screens.
+
+	* The Right Ascension/Declination of the selected star is available
+	in the star info dialog.
+
+	* About data file dialog, which shows info about the data file
+	currently loaded into memory.
+
+	* Older data files are now incompatible. I don't know of any other
+	than the one distributed with spacechart, so I don't think there will
+	be problems.
+
+	* General bugfixes.
+
+Changes in version 0.9.2
+------------------------
+
+	* Added a button to the star configuration page to select which stars
+	have their name drawn.
+
+	* Added menu items for most toobar actions.
+
+	* The gliese.dat file has been modified, so that most stars now have
+	a name that can be displayed on the map.
+
+	* Clicking on stars should be easier now, since the sensitive area
+	around them has been increased.
+
+	* Added an option to abort a file load in progress.
+
+	* Now the user coordinates are shown.

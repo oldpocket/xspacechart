@@ -1,0 +1,56 @@
+GNU SpaceChart 3D starmapping program
+-------------------------------------
+
+GNU SpaceChart is a program for displaying maps of the stars in 3D and
+rotate them. It is capable of showing only a subset of the stars in a given
+data file, and only those within a given distance of the center of the
+display. Also, it shows lines between stars that are closer than a given
+distance.
+
+For installation see the INSTALL file.
+
+Included with the program is the file gliese.dat, which is based on the Gliese
+Catalogue of Nearby Stars, 3rd version, which includes all known stars within
+25 parsecs of the Sun.
+
+For future releases check the SpaceChart home page at:
+
+	http://www.gnu.org/software/spacechart/spacechart.html
+
+Use Instructions
+----------------
+
+Open a data file with the 'File/Open' menu item of the 'Open' toolbar menu. A
+map of the stars in the data file should appear in the main window. You can
+rotate it by moving the mouse across it with the right button pressed.
+
+The 'View Radius' scrollbar allows you to select which is the maximum distance
+from the center star you want to see. The 'Zoom' scrollbar magnifies the center
+of the image.
+
+The "User Coords" are the equatorial latitude and longitude of the observer,
+and a "North" parameter that indicates which way of the screen is
+north. So, if the "north" field is 0, north is towards the top of the
+screen, and if it is 180, it's towards the bottom. If you change the user
+coordinates by hand, you will probably use only "round" values of "north".
+
+If you click on a star a dialog will pop up showing the info about that star
+system. This dialog allows you to center the display on that star.
+
+The 'Max Link Shown' field select the maximum size for which links between the
+stars will be shown. How these links are drawn can be selected in the 'Links'
+page of the settings.
+
+The star selection dialog allows you to select a subset of the stars to be
+shown according to their luminosity, spectral class and multiplicity.
+
+Configuration Files
+-------------------
+
+A sample configuration file, spacechartrc, is provided and installed by
+default in /usr/local/etc/spacechartrc. This file contains the program
+defaults and is required ro run spacechart.
+
+These settings can be overridden by a ~/.spacechartrc file, which follows the
+same format. A example of such a file, provided by Robert J. Chassel, is
+available in the documentation directory.

@@ -1,0 +1,36 @@
+                             Data files README
+                                    or
+                  What is all the stuff in this directory?
+                  ----------------------------------------
+                        Miguel Coca <mcoca@gnu.org>
+
+
+As of version 0.9.5, GNU SpaceChart has moved away from the Gliese catalogue
+as the source of the default data file. The data file included along with
+GNU Spacechart is hip30.dat, and it's mostly a subset of the Hipparcos main
+catalogue, restricted to stars within 30 parsecs of the Sun. Information
+about multiple stars not included in the Hipparcos data was obtained from
+the CCDM catalogue.
+
+The default distance of 30 parsecs was chosen to avoid a huge increase in
+the size of the tarball. However, it's very easy to get larger data files,
+and I'll try to make some available from the web page.
+
+If you want to build your own data files, you'll need the original catalogue
+files, which you can download from CDS (http://cdsweb.u-strasbg.fr/). To be
+precise, the files you need are:
+
+	* The Hipparcos main catalogue:
+
+		- ftp://cdsarc.u-strasbg.fr/pub/cats/I/239/hip_main.dat.gz
+
+	* The CCDM catalogue:
+
+		- ftp://cdsarc.u-strasbg.fr/pub/cats/I/269A/ccdm.dat.gz
+
+Save both files into this directory, and gunzip them. Then, run the
+hip2spacechart.sh shell script like this:
+
+	$ ./hip2spacechart.sh 30
+
+Where that "30" is the radius of the data file in parsecs from the Sun.

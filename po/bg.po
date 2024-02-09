@@ -1,0 +1,405 @@
+# Bulgarian translation of Spacechart interface
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Alexander Shopov <al_shopov@web.bg>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.9.4\n"
+"POT-Creation-Date: 2002-11-30 07:16-0800\n"
+"PO-Revision-Date: 2002-01-20 22:35-2000\n"
+"Last-Translator: Alexander Shopov <al_shopov@web.bg>\n"
+"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CP1251\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Create the labels page
+#: src/config_dialog.c:68
+msgid "Star and Link labels"
+msgstr "Имена на звездите и връзките"
+
+#: src/config_dialog.c:74
+msgid "Label Font"
+msgstr "Шрифт за имената"
+
+#: src/config_dialog.c:90
+msgid "Label Color"
+msgstr "Цвят на имената"
+
+#: src/config_dialog.c:107
+msgid "Labels"
+msgstr "Имена"
+
+#: src/config_dialog.c:116
+msgid "Star Drawing"
+msgstr "Изобразяване на звездите"
+
+#: src/config_dialog.c:126
+msgid "Link Drawing"
+msgstr "Изобразяване на връзките"
+
+#: src/gui.c:172
+msgid "Dec:"
+msgstr ""
+
+#: src/gui.c:177
+msgid "RA:"
+msgstr ""
+
+#: src/gui.c:189
+msgid "North:"
+msgstr "Север:"
+
+#: src/gui.c:214
+msgid "User Coords."
+msgstr "Координати на потребителя"
+
+#: src/gui.c:231 src/gui.c:232 src/gui.c:438
+msgid "Show catalogue"
+msgstr ""
+
+#: src/gui.c:236 src/gui.c:237 src/gui.c:436
+msgid "Reload settings"
+msgstr "Презареди настройките"
+
+#. Star selection
+#: src/gui.c:245 src/star_selection_dialog.c:78
+msgid "Star Selection"
+msgstr "Избор на звезди"
+
+#: src/gui.c:246 src/gui.c:443
+msgid "Choose which stars are visible"
+msgstr "Избери кои звезди ще са видими"
+
+#. Toggle links On/Off
+#: src/gui.c:249 src/gui.c:250 src/gui.c:447
+msgid "Show/Hide the links between stars"
+msgstr "Покажи/скрий връзките между звездите"
+
+#. Toggle link labels On/Off
+#: src/gui.c:253 src/gui.c:254 src/gui.c:451
+msgid "Show/Hide link labels"
+msgstr "Покажи/скрий разстоянията"
+
+#. Toggle star labels On/Off
+#: src/gui.c:257 src/gui.c:258 src/gui.c:454
+msgid "Show/Hide star labels"
+msgstr "Покажи/скрий имената на звездите"
+
+#: src/gui.c:261
+msgid "Rotate Up"
+msgstr "Завърти нагоре"
+
+#: src/gui.c:262
+msgid "Rotate the map up"
+msgstr "Завърти атласа нагоре"
+
+#: src/gui.c:264
+msgid "Rotate Down"
+msgstr "Завърти надолу"
+
+#: src/gui.c:265
+msgid "Rotate the map down"
+msgstr "Завърти атласа надолу"
+
+#: src/gui.c:267
+msgid "Rotate Left"
+msgstr "Завърти наляво"
+
+#: src/gui.c:268
+msgid "Rotate the map to the left"
+msgstr "Завърти атласа наляво"
+
+#: src/gui.c:270
+msgid "Rotate Right"
+msgstr "Завърти надясно"
+
+#: src/gui.c:271
+msgid "Rotate the map to the right"
+msgstr "Завърти атласа надясно"
+
+#. Movement Buttons
+#: src/gui.c:274 src/gui.c:275 src/gui.c:461
+msgid "Move map upwards"
+msgstr "Премести атласа нагоре"
+
+#: src/gui.c:277 src/gui.c:278 src/gui.c:463
+msgid "Move map downwards"
+msgstr "Премести атласа надолу"
+
+#: src/gui.c:280 src/gui.c:281 src/gui.c:465
+msgid "Move map to the left"
+msgstr "Премести атласа наляво"
+
+#: src/gui.c:283 src/gui.c:284 src/gui.c:467
+msgid "Move map to the right"
+msgstr "Премести атласа надясно"
+
+#: src/gui.c:286 src/gui.c:287 src/gui.c:469
+msgid "Move map to the front"
+msgstr "Премести атласа напред"
+
+#: src/gui.c:289 src/gui.c:290 src/gui.c:471
+msgid "Move map to the rear"
+msgstr "Премести атласа назад"
+
+#. Settings
+#: src/gui.c:294 src/gui.c:457
+msgid "Settings"
+msgstr "Настройки"
+
+#. About the data file
+#: src/gui.c:301
+msgid "About data file..."
+msgstr "Информация за файла с данните..."
+
+#: src/gui.c:432
+msgid "Open"
+msgstr "Отвори"
+
+#: src/gui.c:434 src/star_info_dialog.c:67
+msgid "Close"
+msgstr "Затвори"
+
+#: src/gui.c:540
+msgid "View Radius"
+msgstr "Хоризонт на видимост"
+
+#: src/gui.c:548
+msgid "Max Link Shown"
+msgstr "Макс. брой връзки"
+
+#. The distance units frame
+#: src/gui.c:551
+msgid "Units"
+msgstr "Мерни единици"
+
+#: src/gui.c:552
+msgid "Light Years"
+msgstr "Светлинни години"
+
+#: src/gui.c:555
+msgid "Parsecs"
+msgstr "Парсеци"
+
+#: src/gui.c:605 src/gui.c:1064
+msgid "Error: Not enough memory"
+msgstr "Грешка: недостатъчно памет"
+
+#: src/gui.c:617
+#, fuzzy
+msgid "GNU SpaceChart: A 3D map of the stars"
+msgstr "Спейсчарт: Триизмерен звезден атлас"
+
+#. File selection dialog
+#: src/gui.c:631
+msgid "Load Star Database"
+msgstr "Зареди звездна база данни"
+
+#: src/gui.c:701
+msgid ""
+"A map of the stars in 3D.\n"
+"For documentation check "
+msgstr ""
+"Триизмерен звезден атлас.\n"
+"За документацията проверете "
+
+#: src/gui.c:703
+msgid "."
+msgstr "."
+
+#: src/gui.c:715
+msgid "About data file"
+msgstr "Информация за файла с данните"
+
+#: src/gui.c:735
+msgid ""
+"This will replace your current default settings.\n"
+"Do you want to continue?"
+msgstr ""
+
+#. Can't happen.
+#: src/gui.c:826 src/gui.c:1241
+#, c-format
+msgid "Error in file %s, line %d: Can't happen"
+msgstr "Грешка във файла %s, линия %d: Не може да се случи"
+
+#: src/gui.c:1044
+#, c-format
+msgid "Loading file %s"
+msgstr "Зареждам файл %s"
+
+#: src/gui.c:1055
+#, c-format
+msgid "File %s not found"
+msgstr "Файлът %s не е открит"
+
+#: src/gui.c:1059
+#, c-format
+msgid "File %s is not a valid catalogue file"
+msgstr "Файлът %s не е валиден файл-каталог"
+
+#: src/link_config.c:98
+msgid "Max Length"
+msgstr "Максимално разстояние"
+
+#: src/link_config.c:98
+msgid "Example"
+msgstr "Изобразяване"
+
+#: src/link_config.c:110
+msgid "Links by length"
+msgstr "Връзки по дължина"
+
+#: src/link_config.c:120
+msgid "Add Rule"
+msgstr "Добави правило"
+
+#: src/link_config.c:123
+msgid "Delete Rule"
+msgstr "Изтрий правило"
+
+#: src/link_config.c:127 src/link_config.c:379
+msgid "Edit Rule"
+msgstr "Редактирай правило"
+
+#: src/link_config.c:242
+msgid "Infinite"
+msgstr "безкрайно"
+
+#. The style
+#: src/link_config.c:360
+msgid "Solid Line"
+msgstr "Непрекъсната линия"
+
+#: src/link_config.c:363
+msgid "Dashed Line"
+msgstr "Пунктирана линия"
+
+#: src/link_config.c:382
+msgid "Link Max Length"
+msgstr "Максимало разстояние на връзката"
+
+#: src/link_config.c:390
+msgid "Link Width"
+msgstr "Дебелина на връзката"
+
+#: src/link_config.c:398
+msgid "Link Color"
+msgstr "Цвят на връзката"
+
+#: src/map_widget.c:88
+msgid "Zoom"
+msgstr "Увеличение"
+
+#: src/settings.c:146
+msgid "Could not load configuration files. Aborting"
+msgstr ""
+"Не успях да заредя конфигурационните файлове. Преустановявам действието"
+
+#: src/star_config.c:85
+msgid "General Rules"
+msgstr "Общи правила"
+
+#: src/star_config.c:87
+msgid "Color by Spectral Class"
+msgstr "Цвят според сектралния клас"
+
+#: src/star_config.c:94
+msgid "Size by luminosity"
+msgstr "Големина според светимостта"
+
+#: src/star_config.c:179 src/star_selection_dialog.c:186
+msgid "White Dwarfs"
+msgstr "Бели джуджета"
+
+#: src/star_config.c:233
+msgid "Stars with label"
+msgstr "Звезди с имена"
+
+#: src/star_info_dialog.c:65
+msgid "Star Data"
+msgstr "Данни за звездите"
+
+#: src/star_info_dialog.c:68
+msgid "Center"
+msgstr "Центрирай"
+
+#: src/star_info_dialog.c:71
+msgid "System Components"
+msgstr "Компоненти на системата"
+
+#: src/star_info_dialog.c:74
+msgid "Catalogue Number:"
+msgstr "Каталожен номер:"
+
+#: src/star_info_dialog.c:85
+msgid "Right Ascension:"
+msgstr "Ректасцензия:"
+
+#: src/star_info_dialog.c:96
+msgid "Declination:"
+msgstr "Деклинация:"
+
+#: src/star_info_dialog.c:107
+msgid "Distance to the Sun:"
+msgstr "Разстояние до Слънцето:"
+
+#: src/star_info_dialog.c:156
+#, c-format
+msgid "Star Data: %s"
+msgstr "Данни за звездите: %s"
+
+#: src/star_info_dialog.c:218
+msgid "Proper Name:"
+msgstr "Собствено име:"
+
+#: src/star_info_dialog.c:221
+msgid "Bayer-Flamsteed:"
+msgstr "Байер-Флемстийд:"
+
+#: src/star_info_dialog.c:224
+msgid "DM:"
+msgstr "DM:"
+
+#: src/star_info_dialog.c:227
+msgid "Spectral Class:"
+msgstr "Спектрален клас:"
+
+#: src/star_info_dialog.c:230
+msgid "Luminosity:"
+msgstr "Светимост:"
+
+#: src/star_info_dialog.c:275
+msgid "parsecs"
+msgstr "парсека"
+
+#: src/star_info_dialog.c:275
+msgid "light years"
+msgstr "светлинни години"
+
+#: src/star_selection_dialog.c:93
+msgid "Minimum Luminosity"
+msgstr "Минимална светимост"
+
+#: src/star_selection_dialog.c:105
+msgid "Maximum Luminosity"
+msgstr "Максимална светимост"
+
+#: src/star_selection_dialog.c:137
+msgid "Show Multiples"
+msgstr "Показвай компонентите"
+
+#: src/star_selection_dialog.c:144
+msgid "Spectral Class"
+msgstr "Спектрален клас"
+
+#: src/star_selection_dialog.c:154
+msgid "Show"
+msgstr "Покажи"
+
+#~ msgid "Lat:"
+#~ msgstr "Широчина:"
+
+#~ msgid "Lon:"
+#~ msgstr "Дължина:"
